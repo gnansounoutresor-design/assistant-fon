@@ -654,22 +654,20 @@ def erreur_interne(_error):
         "error": "Une erreur interne est survenue. Réessaie."
     }), 500
 
-
 # ============================================================
 # DÉMARRAGE
 # ============================================================
 
 if __name__ == "__main__":
 
-    print("\n=== ASSISTANT FRANÇAIS–FON ===")
+    print("\n=== ASSISTANT FRANÇAIS-FON ===")
     print("Conversation : Groq → OpenRouter")
     print("Traduction : Gemini")
     print("Synthèse vocale : MMS TTS Fon")
-    print("Site local : http://127.0.0.1:5000\n")
 
     app.run(
-        host="127.0.0.1",
-        port=5000,
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000)),
         debug=False,
         threaded=True,
     )
