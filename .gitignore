@@ -1,0 +1,21 @@
+﻿.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+*.log
+
+# Fichiers audio de test
+/reponse_fon.wav
+/test_voix_fon.wav
+
+# Sauvegardes locales
+/sauvegarde_interface_*/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Audios générés temporairement
+/static/audio/*

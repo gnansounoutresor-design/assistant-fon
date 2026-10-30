@@ -1,0 +1,106 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Assistant Fon</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a class="brand" href="/" aria-label="Assistant Fon, accueil">
+          <span class="brand-icon">F</span>
+          <span class="brand-name">Assistant Fon</span>
+        </a>
+        <button id="close-sidebar" class="icon-button mobile-only" type="button" aria-label="Fermer le menu">✕</button>
+      </div>
+
+      <button id="new-chat" class="new-chat" type="button">
+        <span class="plus">＋</span>
+        <span>Nouvelle conversation</span>
+      </button>
+
+      <div class="sidebar-label">RÉCENT</div>
+      <nav id="conversation-list" class="conversation-list" aria-label="Conversations récentes">
+        <p class="empty-history">Tes conversations apparaîtront ici.</p>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="profile-avatar">F</div>
+        <div class="profile-info">
+          <strong>Assistant Français–Fon</strong>
+          <span>Conversation bilingue</span>
+        </div>
+        <span class="status-indicator" title="Vérification du serveur"></span>
+      </div>
+    </aside>
+
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <button id="open-sidebar" class="icon-button menu-button" type="button" aria-label="Ouvrir le menu">☰</button>
+        <div class="topbar-title">
+          <span>Assistant Fon</span>
+          <span class="model-badge">Français ↔ Fon</span>
+        </div>
+        <button id="new-chat-top" class="icon-button" type="button" title="Nouvelle conversation" aria-label="Nouvelle conversation">＋</button>
+      </header>
+
+      <section id="chat-scroll" class="chat-scroll">
+        <div id="messages" class="messages">
+          <section id="welcome" class="welcome">
+            <div class="welcome-logo">F</div>
+            <h1>Que souhaites-tu apprendre ?</h1>
+            <p>Pose une question en français. Je peux te répondre, traduire en Fon et essayer de prononcer la traduction.</p>
+
+            <div class="suggestions">
+              <button class="suggestion" type="button" data-prompt="Bonjour, présente-toi et explique ce que tu peux faire.">
+                <span class="suggestion-icon">✦</span>
+                <span><strong>Faire connaissance</strong><small>Découvrir l'assistant</small></span>
+              </button>
+              <button class="suggestion" type="button" data-prompt="Comment dit-on « bonjour » en Fon ?">
+                <span class="suggestion-icon">文</span>
+                <span><strong>Découvrir le Fon</strong><small>Explorer une traduction</small></span>
+              </button>
+              <button class="suggestion" type="button" data-prompt="Explique-moi simplement ce qu'est l'intelligence artificielle.">
+                <span class="suggestion-icon">◈</span>
+                <span><strong>Comprendre un sujet</strong><small>Obtenir une explication</small></span>
+              </button>
+              <button class="suggestion" type="button" data-prompt="Combien font 8 + 2 ?">
+                <span class="suggestion-icon">∑</span>
+                <span><strong>Faire un calcul</strong><small>Essayer une question simple</small></span>
+              </button>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <footer class="composer-area">
+        <form id="chat-form" class="composer">
+          <label class="sr-only" for="question">Écris ton message</label>
+          <textarea id="question" rows="1" maxlength="4000" placeholder="Pose une question…" required></textarea>
+          <button id="send" type="submit" aria-label="Envoyer le message" title="Envoyer">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </form>
+        <div class="composer-note">
+          <span id="status-dot" class="status-dot"></span>
+          <span id="status-text">Vérification des services…</span>
+        </div>
+        <p class="disclaimer">Les traductions en Fon peuvent nécessiter une vérification humaine.</p>
+      </footer>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
